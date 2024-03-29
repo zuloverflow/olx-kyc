@@ -1,10 +1,30 @@
-Chrome Extension to show the latest data on covid of UK
-=======
-![covid_report](https://user-images.githubusercontent.com/11813341/152206544-8e629f40-bf26-4623-8a75-9621183fd0b5.gif)
+# How to
 
-# Tools used #
-* HTML, CSS and JavaScript
-* [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+- Install: `yarn`
+- build: `yarn build`
 
+### output
 
-Author [Sampurna Chapagain](https://twitter.com/saam_codes)
+output directory: `dist`
+
+replace output file under `webpack.config.json` (default: `'kyc-enhanced-bundle.js'`)
+
+### how to use
+
+import build file to userscript manager.
+
+example _(using tampermonkey extension)_:
+
+```
+// ==UserScript==
+// @name         olx kyc
+// @namespace    http://tampermonkey.net/
+// @version      2024-01-13
+// @description  try to take over the world!
+// @author       You
+// @match        https://blablabla/* <<< replace with your site
+// @icon         https://blablabla <<< replace with your icon
+// @require      file:///C:/User/scripts/olx/dist/kyc-enhanced-bundle.js
+// @grant        none
+// ==/UserScript==
+```

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="buefy.css">
+</head>
+
+<body>
+    <div id="app">
+        <section class="m-4">
+            <b-notification :closable="false">
+                <b-loading :is-full-page="false" v-model="isLoading">
+                </b-loading>
+                <b-field label="Result">
+                    <b-input maxlength="200" type="textarea" v-model="text"></b-input>
+                </b-field>
+            </b-notification>
+            <b-field v-if="isLoading">
+                <b-progress type="is-success" :value="v" show-value format="percent"></b-progress>
+            </b-field>
+        </section>
+    </div>
+
+    <script src="vue.js"></script>
+    <!-- Full bundle -->
+    <script src="buefy.js"></script>
+    <script src='tesseract.js'></script>
+    <script src='main.js'></script>
+
+</body>
+
+</html>
+<!-- 
+<html>
+
+<body>
+
+    <textarea cols="30" name="original" rows="10" style="width: 100%;" id="convertedText">
+    </textarea>
+
+    <script src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js'></script>
+
+    <script>
+        const workerPromise = Tesseract.createWorker('eng', 1, {
+            logger: (s) => console.log(s.progress),
+        });
+        async function ocr() {
+            const imageUrl = "https://apollo.olx.co.id/v1/files/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmbiI6IjY1ZGQ2ZmIwNWE1NGItS1lDSUQiLCJpc3MiOiJhdXRoMCJ9.z8pcjAiXmVS3NNBrSjvx0mnFqX4KOKAFGxO5fXXMZf4/image"
+            const worker = await workerPromise;
+            const ret = await worker.recognize(
+                imageUrl
+            );
+            console.log(ret.data);
+            document.getElementById('convertedText').value = ret.data.text
+            await worker.terminate();
+        }
+        ocr()
+
+    </script>
+
+</body>
+
+</html> -->

@@ -1,0 +1,21 @@
+{
+  "name": "olx",
+  "version": "1.0.0",
+  "description": "enhanced script",
+  "main": "index.js",
+  "author": "Zul",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.11.25",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.2",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "tesseract.js": "^5.0.5"
+  },
+  "scripts": {
+    "build": "npx webpack"
+  }
+}

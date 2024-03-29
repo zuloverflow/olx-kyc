@@ -1,0 +1,32 @@
+{
+    "name": "Akang",
+    "version": "1.0.0",
+    "description": "request by admin",
+    "manifest_version": 3,
+    "author": "Akang",
+    "action": {
+        "default_popup": "index.html",
+        "default_title": "Akang"
+    },
+    "content_security_policy": {
+        "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+    },
+    "permissions": [
+        "webRequest",
+        "*://*.olx.co.id/"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://uvt.olx.co.id/allTasks"
+            ],
+            "js": [
+                "rxjs.js",
+                "xl.js",
+                "jquery.js",
+                "toastr.js",
+                "script.js"
+            ]
+        }
+    ]
+}
